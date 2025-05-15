@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Праздник в каждый дом - Бронирование</title>
+
+    <style>
+
+        /* Общие стили (такие же как в index.html) */
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+            font-family: 'Arial', sans-serif;
+
+        }
+
+        
+
+        body {
+
+            color: #333;
+
+            line-height: 1.6;
+
+        }
+
+        
+
+        .container {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 0 20px;
+
+        }
+
+        
+
+        header {
+
+            background-color: #ff6b6b;
+
+            padding: 20px 0;
+
+            color: white;
+
+        }
+
+        
+
+        .header-content {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+        }
+
+        
+
+        .logo {
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+        }
+
+        
+
+        nav ul {
+
+            display: flex;
+
+            list-style: none;
+
+        }
+
+        
+
+        nav ul li {
+
+            margin-left: 20px;
+
+        }
+
+        
+
+        nav ul li a {
+
+            color: white;
+
+            text-decoration: none;
+
+            transition: color 0.3s;
+
+        }
+
+        
+
+        nav ul li a:hover {
+
+            color: #ffe66d;
+
+        }
+
+        
+
+        .btn {
+
+            background-color: #ff6b6b;
+
+            color: white;
+
+            border: none;
+
+            padding: 12px 25px;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            font-size: 16px;
+
+            transition: background-color 0.3s;
+
+        }
+
+        
+
+        .btn:hover {
+
+            background-color: #ff5252;
+
+        }
+
+        
+
+        /* Стили для страницы бронирования */
+
+        .booking {
+
+            padding: 60px 0;
+
+        }
+
+        
+
+        .booking-header {
+
+            text-align: center;
+
+            margin-bottom: 40px;
+
+        }
+
+        
+
+        .booking-header h1 {
+
+            font-size: 32px;
+
+            margin-bottom: 20px;
+
+        }
+
+        
+
+        .booking-content {
+
+            display: flex;
+
+            gap: 40px;
+
+        }
+
+        
+
+        .order-details {
+
+            flex: 1;
+
+            background: #f7f7f7;
+
+            padding: 30px;
+
+            border-radius: 10px;
+
+        }
+
+        
+
+        .order-details h2 {
+
+            margin-bottom: 20px;
+
+            font-size: 24px;
+
+        }
+
+        
+
+        .detail-row {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-bottom: 15px;
+
+            padding-bottom: 15px;
+
+            border-bottom: 1px solid #ddd;
+
+        }
+
+        
+
+        .detail-label {
+
+            font-weight: bold;
+
+        }
+
+        
+
+        .services {
+
+            margin-top: 30px;
+
+        }
+
+        
+
+        .service-item {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-bottom: 15px;
+
+            align-items: center;
+
+        }
+
+        
+
+        .service-checkbox {
+
+            margin-right: 10px;
+
+        }
+
+        
+
+        .service-price {
+
+            font-weight: bold;
+
+        }
+
+        
+
+        .booking-form {
+
+            flex: 1;
+
+        }
+
+        
+
+        .form-group {
+
+            margin-bottom: 20px;
+
+        }
+
+        
+
+        .form-group label {
+
+            display: block;
+
+            margin-bottom: 5px;
+
+            font-weight: bold;
+
+        }
+
+        
+
+        .form-group input, 
+
+        .form-group textarea, 
+
+        .form-group select {
+
+            width: 100%;
+
+            padding: 10px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 5px;
+
+        }
+
+        
+
+        .form-group textarea {
+
+            height: 100px;
+
+            resize: vertical;
+
+        }
+
+        
+
+        .total {
+
+            background: #f7f7f7;
+
+            padding: 20px;
+
+            border-radius: 10px;
+
+            margin-top: 30px;
+
+            text-align: right;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+        }
+
+        
+
+        .submit-booking {
+
+            text-align: center;
+
+            margin-top: 30px;
+
+        }
+
+        
+
+        footer {
+
+            background-color: #333;
+
+            color: white;
+
+            padding: 40px 0;
+
+        }
+
+        
+
+        .footer-content {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            flex-wrap: wrap;
+
+            gap: 40px;
+
+        }
+
+        
+
+        .footer-section {
+
+            flex: 1;
+
+            min-width: 200px;
+
+        }
+
+        
+
+        .footer-section h3 {
+
+            margin-bottom: 20px;
+
+            font-size: 20px;
+
+        }
+
+        
+
+        .footer-section ul {
+
+            list-style: none;
+
+        }
+
+        
+
+        .footer-section ul li {
+
+            margin-bottom: 10px;
+
+        }
+
+        
+
+        .footer-section ul li a {
+
+            color: #ddd;
+
+            text-decoration: none;
+
+            transition: color 0.3s;
+
+        }
+
+        
+
+        .footer-section ul li a:hover {
+
+            color: #4ecdc4;
+
+        }
+
+        
+
+        .phone {
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+            color: #4ecdc4;
+
+        }
+
+        
+
+        .copyright {
+
+            text-align: center;
+
+            margin-top: 40px;
+
+            padding-top: 20px;
+
+            border-top: 1px solid #555;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Шапка сайта -->
+
+    <header>
+
+        <div class="container header-content">
+
+            <div class="logo">Праздник в каждый дом</div>
+
+            <nav>
+
+                <ul>
+
+                    <li><a href="index.html">Главная</a></li>
+
+                    <li><a href="search.html">Поиск локаций</a></li>
+
+                    <li><a href="#">Акции</a></li>
+
+                    <li><a href="booking.html">Бронирование</a></li>
+
+                    <li><a href="http://xxxxxx-m1.wsr.ru/feedback">Обратная связь</a></li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- Бронирование -->
+
+    <section class="booking">
+
+        <div class="container">
+
+            <div class="booking-header">
+
+                <h1>Оформление бронирования</h1>
+
+                <p>Пожалуйста, заполните форму ниже для завершения бронирования</p>
+
+            </div>
+
+            
+
+            <div class="booking-content">
+
+                <div class="order-details">
+
+                    <h2>Детали заказа</h2>
+
+                    
+
+                    <div class="detail-row">
+
+                        <span class="detail-label">Регион:</span>
+
+                        <span>Москва</span>
+
+                    </div>
+
+                    
+
+                    <div class="detail-row">
+
+                        <span class="detail-label">Локация:</span>
+
+                        <span>Детский центр "Радуга"</span>
+
+                    </div>
+
+                    
+
+                    <div class="detail-row">
+
+                        <span class="detail-label">Адрес:</span>
+
+                        <span>ул. Праздничная, 15</span>
+
+                    </div>
+
+                    
+
+                    <div class="detail-row">
+
+                        <span class="detail-label">Дата:</span>
+
+                        <span>15.06.2023</span>
+
+                    </div>
+
+                    
+
+                    <div class="detail-row">
+
+                        <span class="detail-label">Количество человек:</span>
+
+                        <span>25 (10 взрослых + 15 детей)</span>
+
+                    </div>
+
+                    
+
+                    <div class="detail-row">
+
+                        <span class="detail-label">Выбранная зона:</span>
+
+                        <span>Зона A</span>
+
+                    </div>
+
+                    
+
+                    <div class="detail-row">
+
+                        <span class="detail-label">Стоимость аренды:</span>
+
+                        <span>5 000 руб.</span>
+
+                    </div>
+
+                    
+
+                    <div class="services">
+
+                        <h3>Дополнительные услуги</h3>
+
+                        
+
+                        <div class="service-item">
+
+                            <label>
+
+                                <input type="checkbox" class="service-checkbox" data-price="3000">
+
+                                Организация питания (3 000 руб.)
+
+                            </label>
+
+                        </div>
+
+                        
+
+                        <div class="service-item">
+
+                            <label>
+
+                                <input type="checkbox" class="service-checkbox" data-price="5000">
+
+                                Услуги аниматоров (5 000 руб.)
+
+                            </label>
+
+                        </div>
+
+                        
+
+                        <div class="service-item">
+
+                            <label>
+
+                                <input type="checkbox" class="service-checkbox" data-price="2500">
+
+                                Услуги ведущего (2 500 руб.)
+
+                            </label>
+
+                        </div>
+
+                        
+
+                        <div class="service-item">
+
+                            <label>
+
+                                <input type="checkbox" class="service-checkbox" data-price="1500">
+
+                                Услуги детского такси (1 500 руб.)
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                
+
+                <div class="booking-form">
+
+                    <h2>Контактная информация</h2>
+
+                    
+
+                    <div class="form-group">
+
+                        <label for="name">ФИО</label>
+
+                        <input type="text" id="name" required>
+
+                    </div>
+
+                    
+
+                    <div class="form-group">
+
+                        <label for="phone">Телефон</label>
+
+                        <input type="tel" id="phone" required>
+
+                    </div>
+
+                    
+
+                    <div class="form-group">
+
+                        <label for="email">Email</label>
+
+                        <input type="email" id="email" required>
+
+                    </div>
+
+                    
+
+                    <div class="form-group">
+
+                        <label for="comment">Дополнительные пожелания</label>
+
+                        <textarea id="comment"></textarea>
+
+                    </div>
+
+                    
+
+                    <div class="total">
+
+                        Итого: <span id="total-price">5 000</span> руб.
+
+                    </div>
+
+                    
+
+                    <div class="submit-booking">
+
+                        <button type="submit" class="btn">Забронировать</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Подвал -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div class="footer-section">
+
+                    <h3>Контакты</h3>
+
+                    <div class="phone">8 (800) 111-20-20</div>
+
+                    <p>info@prazdnik.ru</p>
+
+                </div>
+
+                <div class="footer-section">
+
+                    <h3>Навигация</h3>
+
+                    <ul>
+
+                        <li><a href="index.html">Главная</a></li>
+
+                        <li><a href="search.html">Поиск локаций</a></li>
+
+                        <li><a href="#">Акции</a></li>
+
+                        <li><a href="booking.html">Бронирование</a></li>
+
+                    </ul>
+
+                </div>
+
+                <div class="footer-section">
+
+                    <h3>Полезные ссылки</h3>
+
+                    <ul>
+
+                        <li><a href="http://xxxxxx-m1.wsr.ru/return">Возврат</a></li>
+
+                        <li><a href="http://xxxxxx-m1.wsr.ru/feedback">Обратная связь</a></li>
+
+                        <li><a href="#">Политика конфиденциальности</a></li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="copyright">
+
+                <p>&copy; 2023 Праздник в каждый дом. Все права защищены.</p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <script>
+
+        // Расчет общей стоимости
+
+        const checkboxes = document.querySelectorAll('.service-checkbox');
+
+        const totalElement = document.getElementById('total-price');
+
+        let basePrice = 5000;
+
+        
+
+        function calculateTotal() {
+
+            let total = basePrice;
+
+            
+
+            checkboxes.forEach(checkbox => {
+
+                if (checkbox.checked) {
+
+                    total += parseInt(checkbox.dataset.price);
+
+                }
+
+            });
+
+            
+
+            totalElement.textContent = total.toLocaleString();
+
+        }
+
+        
+
+        checkboxes.forEach(checkbox => {
+
+            checkbox.addEventListener('change', calculateTotal);
+
+        });
+
+        
+
+        // Инициализация расчета
+
+        calculateTotal();
+
+    </script>
+
+</body>
+
+</html>
