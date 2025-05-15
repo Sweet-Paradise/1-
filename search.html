@@ -12,7 +12,7 @@
 
   <style>
 
-    /* Общие стили (такие же как в index.html) */
+    /* Общие стили */
 
     * {
 
@@ -210,6 +210,10 @@
 
       transition: transform 0.3s, box-shadow 0.3s;
 
+      display: flex;
+
+      flex-direction: column;
+
     }
 
      
@@ -228,27 +232,25 @@
 
       height: 200px;
 
-      background-color: #eee;
+      width: 100%;
 
-      background-size: cover;
-
-      background-position: center;
+      object-fit: cover;
 
     }
 
      
 
     .location-info {
-    padding: 25px; /* Увеличьте padding */
-    display: flex;
-    flex-direction: column;
-    height: calc(100% - 200px); /* Высота минус изображение */
-}
 
-.location-info .btn {
-    margin-top: auto; /* Прижмет кнопку к низу */
-    align-self: flex-start; /* Выравнивание по левому краю */
-}
+      padding: 20px;
+
+      flex: 1;
+
+      display: flex;
+
+      flex-direction: column;
+
+    }
 
      
 
@@ -272,6 +274,8 @@
 
       color: #666;
 
+      font-size: 14px;
+
     }
 
      
@@ -289,6 +293,24 @@
       text-align: center;
 
       font-weight: bold;
+
+    }
+
+     
+
+    .location-info p {
+
+      margin-bottom: 20px;
+
+      flex-grow: 1;
+
+    }
+
+     
+
+    .btn-container {
+
+      margin-top: auto;
 
     }
 
@@ -462,11 +484,11 @@
 
         <div class="location-card">
 
-          <div class="location-img" style="background-image: url('images/location1.jpg');"></div>
+          <img src="images/location1.jpg" alt="Детский центр Радуга" class="location-img">
 
           <div class="location-info">
 
-            <h3>Детский центр "Лесок"</h3>
+            <h3>Детский центр "Радуга"</h3>
 
             <div class="location-meta">
 
@@ -484,7 +506,11 @@
 
             <p>Просторный детский центр с игровыми зонами, батутом и кафе. Идеально подходит для праздников до 30 человек.</p>
 
-            <a href="seat.html" class="btn">Выбрать зону</a>
+            <div class="btn-container">
+
+              <a href="seat.html" class="btn">Выбрать зону</a>
+
+            </div>
 
           </div>
 
@@ -496,7 +522,7 @@
 
         <div class="location-card">
 
-          <div class="location-img" style="background-image: url('images/location2.jpg');"></div>
+          <img src="images/location2.jpg" alt="Кафе Сладкоежка" class="location-img">
 
           <div class="location-info">
 
@@ -518,7 +544,11 @@
 
             <p>Уютное кафе с детской комнатой и специальным праздничным меню. Вместимость до 25 человек.</p>
 
-            <a href="seat.html" class="btn">Выбрать зону</a>
+            <div class="btn-container">
+
+              <a href="seat.html" class="btn">Выбрать зону</a>
+
+            </div>
 
           </div>
 
@@ -530,11 +560,11 @@
 
         <div class="location-card">
 
-          <div class="location-img" style="background-image: url('images/location3.jpg');"></div>
+          <img src="images/location3.jpg" alt="Парк Сказка" class="location-img">
 
           <div class="location-info">
 
-            <h3>Детский центр "Сказка"</h3>
+            <h3>Парк "Сказка"</h3>
 
             <div class="location-meta">
 
@@ -550,9 +580,13 @@
 
             </div>
 
-            <p>Открытые и закрытые площадки для праздников, есть на свежем воздухе. Вместимость до 50 человек.</p>
+            <p>Открытые и закрытые площадки в парке для праздников на свежем воздухе. Вместимость до 50 человек.</p>
 
-            <a href="seat.html" class="btn">Выбрать зону</a>
+            <div class="btn-container">
+
+              <a href="seat.html" class="btn">Выбрать зону</a>
+
+            </div>
 
           </div>
 
